@@ -7,7 +7,7 @@
 
   In this repo your job is to write functions to make each function call work properly.
 
-  Here's an example of code that will be given to you:
+//Here's an example of code that will be given to you:
 
   sayHi('Hi Katie', function(thingToSay){
     alert(thingToSay);
@@ -27,7 +27,14 @@
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
 
-// Code Here 
+function first(array, cb){
+  cb(array[0])
+}
+
+first(names,function(){
+  console.log('whats up')
+})
+
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -47,7 +54,9 @@ first(names, function(firstName){
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-//Code Here
+function last(array, cb){
+  cb(array[length - 1])
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -84,7 +93,17 @@ multiply(4, 3, function(answer){
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-//Code Here 
+
+function contains (arr, name, cb){
+  for (i = 0; 1 <= arr.length; i++){
+    if(arr[i] === name){
+      cb(true)
+    } else {
+      cb(false)
+    }
+  }
+}
+
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
