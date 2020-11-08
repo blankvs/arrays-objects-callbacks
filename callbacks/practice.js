@@ -27,14 +27,32 @@
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
 
-function first(array, cb){
+function first (array, cb){
   cb(array[0])
 }
 
-first(names,function(){
-  console.log('whats up')
-})
 
+// const numbers = [1,2,3]
+// function sergioCallback(value) {
+//   console.log(value)
+// }
+// first(numbers, sergioCallback)
+
+// let a = 1
+// let b = 2
+// let c = b
+// console.log(c)
+
+// function add(num1, num2, num3) {
+//   return num1 + num2 + num3
+// }
+// add(1, 2, 3) // 3
+// add(5, 5, 5) // 3
+
+// function arrayify(val1, val2) {
+//   return [val1, val2]
+// }
+// arrayify(1, 2) // [1, 2]
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -54,9 +72,15 @@ first(names, function(firstName){
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-function last(array, cb){
-  cb(array[length - 1])
+function last (array, callback){
+  callback(array[array.length - 1])
 }
+
+  // function last (array, callback){
+  // const lastIndexOfTheArray = array.length - 1
+  // const lastElement = array[lastIndexOfTheArray]
+  // callback(lastElement)
+
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -74,7 +98,9 @@ last(names, function(lastName){
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
-//Code Here
+function multiply(num1, num2, cb){
+  cb(num1 * num2)
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -94,17 +120,15 @@ multiply(4, 3, function(answer){
 */
 
 
-function contains (arr, name, cb){
-  for (i = 0; 1 <= arr.length; i++){
-    if(arr[i] === name){
-      cb(true)
-    } else {
-      cb(false)
-    }
+function contains (array, name, cb){
+  if (name.indexOf(array[0]) !== -1) {
+    cb(true)
+  } else {
+    cb(false)
   }
 }
 
-
+// javascript check if a value exists in an array 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -124,7 +148,10 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
-//Code Here
+function uniq(array, cb){
+  cb(array.filter((a, b) => array.indexOf(a) === b))
+}
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -141,7 +168,9 @@ uniq(names, function(uniqArr){
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-//Code Here 
+function each(array,cb){
+  cb()
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -154,11 +183,14 @@ each(names, function(item, indice){
 ////////// PROBLEM 7 //////////
 
 /*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
+  Write a function called getUserById that takes in three parameters: an array of objects (users),
+  an id and a callback, and searches for the user with a matching id.
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
-// Code here
+function getUserById(users, id, cb){
+  cb()
+}
 
 // Do not edit the code below.
 var users = [
